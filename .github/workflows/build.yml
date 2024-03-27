@@ -53,3 +53,8 @@ jobs:
         python -m pip install --upgrade pip
         pip install setuptools auditwheel auditwheel-symbols
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+
+    - name: Build Paddle2ONNX
+      working-directory: ./paddle2onnx
+      run: |
+        python setup.py install
